@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Muhammad Ahmed – Contact</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* allowed */
+      font-size: 16px;               /* allowed */
+      color: #333;                    /* allowed */
+      background-color: #f9f9f9;     /* allowed */
+    }
+
+    header h1 {
+      color: #1a1a1a;
+    }
+
+    nav a {
+      color: #007BFF; /* allowed */
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    nav a[aria-current="page"] {
+      color: #0056b3; /* allowed */
+    }
+
+    legend, label, button {
+      font-family: inherit;
+      font-size: 1em;
+      color: #000; /* allowed */
+    }
+
+    button {
+      background-color: #28a745; /* allowed: green = positive action (Norman) */
+      color: #fff;               /* allowed */
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    em {
+      color: #555; /* allowed: subtle emphasis */
+    }
+  </style>
 </head>
 <body>
-    
+
+  <!-- Page header: identifies the page purpose -->
+  <header>
+    <h1>Contact</h1>
+  </header>
+
+  <!-- Primary navigation: consistent structure across pages -->
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="analysis.html">Interaction Analysis</a></li>
+      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+      <li><a href="html-errors.html" >Design Errors</a></li>
+      <li><a href="examples.html" >Example</a></li>
+      <!-- <li><a href="assignment01.html">Lab 01 Rules</a></li> -->
+    </ul>
+  </nav>
+
+  <main>
+
+    <p>
+      <em>All fields are required to send your message.</em>
+    </p>
+
+    <form action="#" method="post">
+
+      <fieldset>
+
+        <legend><strong>Send a Message</strong></legend>
+
+        <label for="subject">Subject</label><br>
+        <input type="text" id="subject" name="subject"><br><br>
+
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+
+        <!-- Clear action button -->
+        <button type="submit">Send Message</button>
+        <div>
+            <em>Feedback: Your message will be sent to support.</em>
+        </div>
+    </fieldset>
+
+    </form>
+  </main>
+
+  <!-- Footer information -->
+  <footer>
+    <p>Keyboard-accessible form with screen-reader friendly labels.</p>
+  </footer>
+
 </body>
 </html>

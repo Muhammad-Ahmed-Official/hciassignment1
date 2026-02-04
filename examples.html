@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Split Example – Norman, GOMS, KLM</title>
+
+  <style>
+    body { 
+        font-family: Arial, sans-serif; font-size: 16px; 
+    }
+    h2 { 
+        color: #007BFF; 
+    }
+    .norman { 
+        background-color: #fff3cd; color: black; font-family: Arial, sans-serif; font-size: 16px; 
+    }
+    .goms { 
+        background-color: #e7f3ff; color: black; font-family: Arial, sans-serif; font-size: 16px; 
+    }
+    .klm { 
+        background-color: #e9f7ef; color: black; font-family: Arial, sans-serif; font-size: 16px; 
+    }
+    button { 
+        background-color: #007BFF; color: white; font-family: Arial, sans-serif; font-size: 16px; 
+    }
+    .expense-ui { 
+        background-color: #f5f5f5; color: black; font-family: Arial, sans-serif; font-size: 16px; 
+    }
+     nav a {
+      color: #007BFF; 
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    nav a[aria-current="page"] {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Example Task: Split Expense Among Friends</h1>
+  <p>Visual representation of a simple UI analyzed using Norman, GOMS, and KLM.</p>
+</header>
+
+<nav aria-label="Primary navigation">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="analysis.html">Interaction Analysis</a></li>
+        <li><a href="norman2klm.html" >Norman–GOMS–KLM</a></li>
+        <li><a href="html-errors.html" >Design Errors</a></li>
+        <li><a href="examples.html" aria-current="page">Example</a></li>
+        </ul>
+    </nav>
+
+
+<main>
+
+  <section class="expense-ui" style="background-color:#f5f5f5; color:black; font-family:Arial, sans-serif; font-size:16px;">
+  <h2>Expense Input</h2>
+  <p><em>Scenario:</em> You paid <strong>$60</strong> and want to split among 3 friends.</p>
+
+  <form>
+    <!-- Total Amount -->
+    <div>
+      <label for="total">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="Money Icon" width="20" height="20">
+        <strong>Total Amount Paid ($):</strong>
+      </label><br>
+      <input type="text" id="total" name="total" value="60" style="font-family:Arial, sans-serif; font-size:16px; color:black;"><br><br>
+    </div>
+
+    <!-- Number of Friends -->
+    <div>
+      <label for="friends">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Friends Icon" width="20" height="20">
+        <strong>Number of Friends:</strong>
+      </label><br>
+      <input type="text" id="friends" name="friends" value="3" style="font-family:Arial, sans-serif; font-size:16px; color:black;"><br><br>
+    </div>
+
+    <button type="button" style="background-color:#007BFF; color:white; font-family:Arial, sans-serif; font-size:16px;">
+      Calculate Share
+    </button>
+  </form>
+
+  <p><em>Result:</em> Each friend owes <strong>$20</strong></p>
+</section>
+
+
+
+  <!-- Norman Analysis -->
+ <!-- Norman Analysis with 7 Stages -->
+<section class="norman" style="background-color:#fff3cd; color:black; font-family:Arial, sans-serif; font-size:16px;">
+  <h2>Norman – Cognitive Model (7 Stages)</h2>
+  <p><em>Applying Norman's 7-stage action model to the expense-splitting task:</em></p>
+
+  <ol>
+    <li>
+      <strong> Forming the Goal:</strong> You want to split $60 among 3 friends fairly.
+    </li>
+    <li>
+      <strong> Forming the Intention:</strong> Decide to calculate each friend’s share.
+    </li>
+    <li>
+      <strong> Specifying the Action:</strong> Enter the total amount and number of friends into the form.
+    </li>
+    <li>
+      <strong> Executing the Action:</strong> Type values into the input fields and click the "Calculate Share" button.
+    </li>
+    <li>
+      <strong> Perceiving the State of the World:</strong> Observe the result displayed below the form.
+    </li>
+    <li>
+      <strong> Interpreting the Perception:</strong> Understand that each friend owes $20.
+    </li>
+    <li>
+      <strong> Evaluating the Outcome:</strong> Check if the result matches the intended goal (correct split).
+    </li>
+  </ol>
+
+  <p><em>This detailed mapping shows how Norman’s cognitive principles apply to a simple UI task.</em></p>
+</section>
+
+
+  <!-- GOMS Analysis -->
+<section class="goms" style="background-color:#e7f3ff; color:black; font-family:Arial, sans-serif; font-size:16px;">
+  <h2>GOMS – Goal, Operators, Methods, Selection Rules</h2>
+  <p><em>Breaking down the expense-splitting task for an expert user:</em></p>
+
+  <ol>
+    <li>
+      <strong>Goal:</strong> Calculate how much each friend owes.
+    </li>
+    <li>
+      <strong>Method:</strong> Use the web form: input total amount, input number of friends, click "Calculate".
+    </li>
+    <li>
+      <strong>Operators:</strong>
+      <ul>
+        <li>Move pointer to "Total Amount" field</li>
+        <li>Type total amount ($60)</li>
+        <li>Move pointer to "Number of Friends" field</li>
+        <li>Type number of friends (3)</li>
+        <li>Move pointer to "Calculate" button</li>
+        <li>Click "Calculate"</li>
+        <li>Observe result ($20 per friend)</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Selection Rules:</strong> 
+      <ul>
+        <li>If any field is empty, prompt the user to fill it (error handling not implemented)</li>
+        <li>Use keyboard shortcuts only if mouse is unavailable</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><em>This shows the structured steps GOMS focuses on for expert, predictable task execution.</em></p>
+</section>
+
+  <!-- KLM Analysis -->
+  <section class="klm" style="background-color:#e9f7ef; color:black; font-family:Arial, sans-serif; font-size:16px;">
+  <h2>KLM – Keystroke-Level Model</h2>
+  <p><em>Low-level execution steps for expert user:</em></p>
+  <pre>
+[M] Decide total amount
+[P] Point to "Total Amount" field
+[K] Type total ($60)
+[P] Point to "Number of Friends" field
+[K] Type number of friends (3)
+[P] Point to "Calculate" button
+[B] Click button
+[R] Observe each friend's share ($20)
+  </pre>
+</section>
+
+</main>
+
+</body>
+</html>

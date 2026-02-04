@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 10 Common HTML Errors & Fixes</title>
+
+  <style>
+    /* Allowed Lab 01 styling */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 1em;
+      color: #000;
+      background-color: #f9f9f9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2em;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 0.5em;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    th {
+      background-color: #e0e0e0;
+    }
+
+    caption {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    pre {
+      background-color: #fff3cd; /* subtle amber for code block highlight */
+      padding: 0.5em;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: monospace;
+    }
+
+    h1, h2 {
+      font-family: Arial, sans-serif;
+      color: #007BFF;
+    }
+    
+    nav a {
+      color: #007BFF; 
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    nav a[aria-current="page"] {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Top 10 Common HTML Errors &amp; Fixes</h1>
+    <p>Reference table for Lab 01 – HTML structure and accessibility corrections</p>
+  </header>
+
+    <nav aria-label="Primary navigation">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="analysis.html">Interaction Analysis</a></li>
+        <li><a href="norman2klm.html" >Norman–GOMS–KLM</a></li>
+        <li><a href="html-errors.html" aria-current="page">Design Errors</a></li>
+        <li><a href="examples.html" >Example</a></li>
+        </ul>
+    </nav>
+
+  <main>
+    <section>
+      <table border="1">
+        <caption>Sample questions: fix common HTML structure and accessibility mistakes</caption>
+        <thead>
+          <tr>
+            <th scope="col">UI Element / Issue</th>
+            <th scope="col">Wrong HTML (with mistake)</th>
+            <th scope="col">Correct UI Element</th>
+            <th scope="col">Correct HTML</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1 -->
+          <tr>
+            <th scope="row">Navigation menu has a link directly inside <code>ul</code> (missing <code>li</code>)</th>
+            <td>
+              <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Navigation list where each link is inside a list item</td>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 2 -->
+          <tr>
+            <th scope="row">Form label not associated with control (<code>for</code> ≠ <code>id</code>)</th>
+            <td>
+              <pre><code>&lt;label for="msg"&gt;Message&lt;/label&gt;
+&lt;textarea id="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+            <td>Label correctly connected to input</td>
+            <td>
+              <pre><code>&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 3 -->
+          <tr>
+            <th scope="row">Heading hierarchy is incorrect (skips a level)</th>
+            <td>
+              <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h3&gt;Sub Title&lt;/h3&gt;</code></pre>
+            </td>
+            <td>Headings follow proper hierarchy</td>
+            <td>
+              <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Sub Title&lt;/h2&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 4 -->
+          <tr>
+            <th scope="row">Table missing <code>caption</code> and <code>th</code></th>
+            <td>
+              <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Model&lt;/td&gt;&lt;td&gt;Predicts&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+            <td>Accessible table with caption + headers</td>
+            <td>
+              <pre><code>&lt;table&gt;
+  &lt;caption&gt;Models and what they predict&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Model&lt;/th&gt;
+      &lt;th scope="col"&gt;Predicts&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;KLM&lt;/th&gt;
+      &lt;td&gt;Execution time&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 5 -->
+          <tr>
+            <th scope="row"><code>aria-current</code> used incorrectly (multiple current pages)</th>
+            <td>
+              <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Only active page marked as current</td>
+            <td>
+              <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 6 -->
+          <tr>
+            <th scope="row">Image missing alt attribute</th>
+            <td>
+              <pre><code>&lt;img src="profile.jpg"&gt;</code></pre>
+            </td>
+            <td>Provide descriptive alt text</td>
+            <td>
+              <pre><code>&lt;img src="profile.jpg" alt="Profile photo of Muhammad Ahmed"&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 7 -->
+          <tr>
+            <th scope="row">Empty link with no text</th>
+            <td>
+              <pre><code>&lt;a href="contact.html"&gt;&lt;/a&gt;</code></pre>
+            </td>
+            <td>Link should have visible text or aria-label</td>
+            <td>
+              <pre><code>&lt;a href="contact.html"&gt;Contact&lt;/a&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 8 -->
+          <tr>
+            <th scope="row">Form missing <code>fieldset</code> and <code>legend</code></th>
+            <td>
+              <pre><code>&lt;form&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input type="text" id="name"&gt;
+&lt;/form&gt;</code></pre>
+            </td>
+            <td>Group related controls with <code>fieldset</code> + <code>legend</code></td>
+            <td>
+              <pre><code>&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Personal Info&lt;/legend&gt;
+    &lt;label for="name"&gt;Name&lt;/label&gt;
+    &lt;input type="text" id="name"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </td>
+          </tr>
+
+          <!-- 9 -->
+<tr>
+  <th scope="row">Missing <code>lang</code> attribute on <code>&lt;html&gt;</code></th>
+  <td>
+    <pre><code>&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;Content here&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </td>
+  <td>Include <code>lang</code> attribute to specify document language</td>
+  <td>
+    <pre><code>&lt;html lang="en"&gt;
+&lt;head&gt;&lt;title&gt;Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;Content here&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </td>
+</tr>
+
+          <!-- 10 -->
+          <tr>
+            <th scope="row">Incorrect semantic element for main content (using <code>div</code> only)</th>
+            <td>
+              <pre><code>&lt;div id="main"&gt;Content here&lt;/div&gt;</code></pre>
+            </td>
+            <td>Use semantic <code>&lt;main&gt;</code> element</td>
+            <td>
+              <pre><code>&lt;main&gt;Content here&lt;/main&gt;</code></pre>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>
