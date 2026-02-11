@@ -72,32 +72,100 @@
       <em>All fields are required to send your message.</em>
     </p>
 
-    <form action="#" method="post">
+            <form action="#" method="post">
+            <fieldset>
+                <legend>Send a Message About HCI Concepts</legend>
+                
+                <p><strong>Imagine you're reaching out to discuss Norman's models, GOMS analysis, or KLM predictions.</strong></p>
+                
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="topic">HCI Topic of Interest:</label><br>
+                <select id="topic" name="topic">
+                    <option value="">-- Please select a topic --</option>
+                    <option value="norman">Norman's Action Cycle</option>
+                    <option value="gulfs">Gulfs of Execution & Evaluation</option>
+                    <option value="affordances">Affordances & Signifiers</option>
+                    <option value="goms">GOMS Task Analysis</option>
+                    <option value="klm">Keystroke-Level Model (KLM)</option>
+                    <option value="emotional">Emotional Design</option>
+                    <option value="other">Other HCI Concept</option>
+                </select><br><br>
+                
+                <fieldset>
+                    <legend>Your Background (select one):</legend>
+                    
+                    <input type="radio" id="student" name="background" value="student">
+                    <label for="student">HCI Student</label><br>
+                    
+                    <input type="radio" id="designer" name="background" value="designer">
+                    <label for="designer">Designer/Developer</label><br>
+                    
+                    <input type="radio" id="researcher" name="background" value="researcher">
+                    <label for="researcher">Researcher/Academic</label><br>
+                    
+                    <input type="radio" id="enthusiast" name="background" value="enthusiast">
+                    <label for="enthusiast">Design Enthusiast</label>
+                </fieldset><br>
+                
+                <label for="message">Your Message or Question:</label><br>
+                <textarea id="message" name="message" rows="6" cols="50" 
+                          placeholder="What aspect of Norman's work, GOMS, or KLM interests you most?"></textarea><br><br>
+                
+                <button type="submit">Send Message</button>
+                <button type="reset">Clear Form</button>
+            </fieldset>
+        </form>
+        <section>
+  <h2>How This Page Follows Norman’s Model and GOMS</h2>
 
-      <fieldset>
+  <h3>Norman’s Seven Stages of Action</h3>
+  <p>
+    This contact form is designed according to Norman’s Action Cycle. 
+    The <strong>goal</strong> of the user is to send a message about HCI concepts.
+  </p>
 
-        <legend><strong>Send a Message</strong></legend>
+  <ul>
+    <li><strong>Goal Formation:</strong> User wants to contact about HCI topics.</li>
+    <li><strong>Intention:</strong> User decides to fill out the contact form.</li>
+    <li><strong>Action Specification:</strong> Clear labels guide what to type in each field.</li>
+    <li><strong>Execution:</strong> User enters name, email, selects topic, writes message, and presses “Send Message”.</li>
+    <li><strong>Perception:</strong> Required fields and structured layout help users see what is needed.</li>
+    <li><strong>Interpretation:</strong> Button color (green) signals positive action.</li>
+    <li><strong>Evaluation:</strong> Form structure reduces confusion, narrowing the Gulf of Execution and Evaluation.</li>
+  </ul>
 
-        <label for="subject">Subject</label><br>
-        <input type="text" id="subject" name="subject"><br><br>
+  <h3>GOMS Analysis</h3>
+  <p>
+    The task of sending a message can be analyzed using GOMS (Goals, Operators, Methods, Selection Rules):
+  </p>
 
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+  <ul>
+    <li><strong>Goal:</strong> Send a message about an HCI concept.</li>
+    <li><strong>Operators:</strong> Typing, clicking, selecting from dropdown, pressing submit.</li>
+    <li><strong>Method:</strong> Fill required fields → Select topic → Choose background → Write message → Click “Send”.</li>
+    <li><strong>Selection Rule:</strong> If topic is known, select it directly; otherwise choose “Other HCI Concept”.</li>
+  </ul>
 
-        <!-- Clear action button -->
-        <button type="submit">Send Message</button>
-        <div>
-            <em>Feedback: Your message will be sent to support.</em>
-        </div>
-    </fieldset>
-
-    </form>
+  <p>
+    The structured layout minimizes cognitive load and supports efficient task completion,
+    making it suitable for KLM time prediction and usability evaluation.
+  </p>
+</section>
+  <section>
+     <h2>References</h2>
+     <li>
+      <a href="https://www.interaction-design.org/literature/book/the-glossary-of-human-computer-interaction/gulf-of-evaluation-and-gulf-of-execution">
+        Interaction Design Foundation – Gulfs of Evaluation and Execution
+      </a>
+    </li>
+  </section>
   </main>
 
-  <!-- Footer information -->
-  <footer>
-    <p>Keyboard-accessible form with screen-reader friendly labels.</p>
-  </footer>
 
 </body>
 </html>
